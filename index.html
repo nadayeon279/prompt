@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 기본 구조</title>
+  <style>
+    /* 스타일 작성 영역 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML 기본 구조 예제</h1>
+  <p>이 페이지는 HTML의 기본 구조를 보여줍니다.</p>
+
+  <script>
+    // JavaScript 작성 영역
+    console.log("페이지가 로드되었습니다.");
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 기본 구조</title>
+  <style>
+    /* 스타일 작성 영역 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .rps-buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML 기본 구조 예제</h1>
+  <p>이 페이지는 HTML의 기본 구조를 보여줍니다.</p>
+
+  <div class="rps-buttons">
+    <button onclick="play('가위')">✌ 가위</button>
+    <button onclick="play('바위')">✊ 바위</button>
+    <button onclick="play('보')">🖐 보</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    // JavaScript 작성 영역
+    console.log("페이지가 로드되었습니다.");
+
+    function play(user) {
+      const options = ['가위', '바위', '보'];
+      const computer = options[Math.floor(Math.random() * 3)];
+      let result = '';
+
+      if (user === computer) {
+        result = '무승부!';
+      } else if (
+        (user === '가위' && computer === '보') ||
+        (user === '바위' && computer === '가위') ||
+        (user === '보' && computer === '바위')
+      ) {
+        result = '당신이 이겼습니다!';
+      } else {
+        result = '당신이 졌습니다!';
+      }
+
+      document.getElementById('result').innerHTML = `
+        당신: ${user} <br>
+        컴퓨터: ${computer} <br>
+        결과: <strong>${result}</strong>
+      `;
+    }
+  </script>
+
+</body>
+</html>
